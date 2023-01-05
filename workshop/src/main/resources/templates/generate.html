@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+
+<body>
+
+    <h1>How many numbers do you wish to generate?</h1>
+    <form action="#" th:action="@{/random/generate}" th:object="${generateObj}" method="post">
+        <!-- Method here is post to 'send' the field to the server -->
+
+        <p>
+
+            <input type="text" th:field="${generateObj.range}" />
+            <!-- Bind the text field input to the Generate object setter (getRange)
+                with generateObj -->
+            <input type="submit" value="Generate" />
+        </p>
+    </form>
+
+</body>
+
+</html>
